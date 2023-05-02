@@ -11,7 +11,7 @@ export const usersFetch = async () => {
   }
 };
 
-export const albumsFetch = async (url) => {
+export const albumsFetch = async (url:string|null) => {
   try {
     const albums = await fetch(SERVER_URL_ALBUMS + url);
     return await albums.json();
@@ -20,7 +20,7 @@ export const albumsFetch = async (url) => {
   }
 };
 
-export const photosFetch = async (url) => {
+export const photosFetch = async (url:string|null) => {
   try {
     const photos = await fetch(SERVER_URL_PHOTOS + url);
     return await photos.json();

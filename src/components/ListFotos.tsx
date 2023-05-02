@@ -2,9 +2,11 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { photosFetch } from './api';
 import s from './style.module.scss';
+import { IPhotos } from '../types/types';
 
 export const ListFotos = () => {
-  const [photos, setPhotos] = useState(null);
+  // const [photos, setPhotos] = useState(null);
+  const [photos, setPhotos] = useState<IPhotos[]>([]);
   const [loadingPhotos, setLoadingPhotos] = useState(true);
   const [params] = useSearchParams();
   const albumId = params.get('albumId');

@@ -2,9 +2,10 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { albumsFetch } from './api';
 import s from './style.module.scss';
+import { IAlbums } from '../types/types';
 
 export const ListAlbums = () => {
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState<IAlbums[]>([]);
   const [loadingAlbums, setLoadingAlbums] = useState(true);
   const [params] = useSearchParams();
   const userId = params.get('userId');

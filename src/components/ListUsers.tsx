@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { usersFetch } from './api';
 import s from './style.module.scss';
+import { IUsers } from '../types/types';
 
 export const ListUsers = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<IUsers[]>([]);
   const [loadingUsers, setLoadingUsers] = useState(true);
 
   useEffect(() => {

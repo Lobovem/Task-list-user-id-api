@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { usersFetch } from './api';
-import s from './style.module.scss';
 import { IUsers } from '../types/types';
+import s from './style.module.scss';
 
 export const ListUsers = () => {
   const [users, setUsers] = useState<IUsers[]>([]);
@@ -35,9 +35,11 @@ export const ListUsers = () => {
               <td className={s.table__item}>{user.username}</td>
               <td className={s.table__item}>{user.email}</td>
               <td className={s.table__itemButton}>
-                <Link to={`/listAlbums?userId=${user.id}`} value={user.id} className={s.table__button}>
+
+                <Link to={`/listAlbums?userId=${user.id}`} className={s.table__button}>
                   Albums
                 </Link>
+
               </td>
             </tr>
           ))}

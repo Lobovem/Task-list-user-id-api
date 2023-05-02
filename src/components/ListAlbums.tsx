@@ -1,8 +1,8 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { albumsFetch } from './api';
-import s from './style.module.scss';
 import { IAlbums } from '../types/types';
+import s from './style.module.scss';
 
 export const ListAlbums = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
@@ -25,9 +25,11 @@ export const ListAlbums = () => {
       {albums.map((album) => (
         <div key={album.id} className={s.albums__item}>
           {album.title}
-          <Link to={`/listFotos?albumId=${album.id}`} value={album.id} className={s.table__button}>
+
+          <Link to={`/listFotos?albumId=${album.id}`} className={s.table__button}>
             Photos
           </Link>
+
         </div>
       ))}
     </div>
